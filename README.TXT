@@ -1,0 +1,8 @@
+This is a quick build of freetyp2.dll to be used with the Mozilla apps based on FF 10.0.12. Should also work with qpdfview and any other apps using mzfntcfgft. To use, close Firefox or other Mozilla app (or qpdfview) and move x:\os2\dll\freetyp2.dll to x:\os2\dll\freetyp2.dll.bak. Adjust to where you have freetyp2.dll installed. Then unzip this copy of freetyp2.dll to the same location. If unhappy with the font rendering of this DLL then reverse the above to restore your original freetyp2.dll.
+Customization: ToDo write a custumization cmd file.
+For now open up freetype-infinality-2.4.11-20130104_04-x86_64.tar.gz and examine infinality-settings.sh. This lists all the environment setting that you can use to adjust the rendering. Where it says something like export INFINALITY_FT_FILTER_PARAMS="11 22 38 22 11", you can enter set INFINALITY_FT_FILTER_PARAMS="11 22 38 22 11" in a cmd window that is opened in the location of Firefox 10.0.12, then you can launch Firefox from that cmd window it see the affect of the setting. Alternatively you can launch the script with ash or ksh to set all the settings in the script. I plan on converting this to a cmd file when I have time (or perhaps a volunteer?).
+Anyways that is why this is labeled a beta, and a quick release as well :)
+Building:
+I just applied the patches to http://hobbes.nmsu.edu/download/pub/os2/dev/util/mzfntcfgft_20130104.zip in the freetype directory with -p1 then did make clean && make. See the documentation in freetype-infinality-2.4.11-20130104_04-x86_64.tar.gz and at http://www.infinality.net/blog/infinality-freetype-patches/
+Dave Yeo (dave.r.yeo@gmail.com)
+
