@@ -1,0 +1,32 @@
+# HG changeset patch
+# Parent 96a6aa431934e24f57f68f71d569d2cd22da5a1b
+# User Dave Yeo <daveryeo@telus.net>
+build for infinality patch, Linux version
+
+diff --git a/fontconfig/src/fcint.h b/fontconfig/src/fcint.h
+--- a/fontconfig/src/fcint.h
++++ b/fontconfig/src/fcint.h
+@@ -82,20 +82,20 @@
+ #else
+ # define fcExport
+ #endif
+ 
+ // #define LOOKUP_SFNT_NAME_DEBUG
+ // #define FONTCONFIG_DEBUG_PRINTF
+ // #define MATCH_DEBUG
+ 
+-#define DEFAULT_SERIF_FONT          "Times New Roman"
++#define DEFAULT_SERIF_FONT          "Liberation Serif"
+ #define DEFAULT_SERIF_FONTJA        "Times New Roman WT J"
+-#define DEFAULT_SANSSERIF_FONT      "Helvetica"
+-#define DEFAULT_MONOSPACED_FONT     "Courier"
++#define DEFAULT_SANSSERIF_FONT      "DejaVu Sans"
++#define DEFAULT_MONOSPACED_FONT     "Liberation Mono"
+ #define DEFAULT_SYMBOL_FONT         "Symbol Set"
+ #define DEFAULT_DINGBATS_FONT       "DejaVu Sans"
+ 
+ /* structure for the font cache in OS2.INI  */
+ typedef struct FontDescriptionCache_s
+ {
+   char achFileName[CCHMAXPATH];
+   struct stat FileStatus;

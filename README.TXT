@@ -1,8 +1,14 @@
-This is a quick build of freetyp2.dll to be used with the Mozilla apps based on FF 10.0.12. Should also work with qpdfview and any other apps using mzfntcfgft. To use, close Firefox or other Mozilla app (or qpdfview) and move x:\os2\dll\freetyp2.dll to x:\os2\dll\freetyp2.dll.bak. Adjust to where you have freetyp2.dll installed. Then unzip this copy of freetyp2.dll to the same location. If unhappy with the font rendering of this DLL then reverse the above to restore your original freetyp2.dll.
-Customization: ToDo write a custumization cmd file.
-For now open up freetype-infinality-2.4.11-20130104_04-x86_64.tar.gz and examine infinality-settings.sh. This lists all the environment setting that you can use to adjust the rendering. Where it says something like export INFINALITY_FT_FILTER_PARAMS="11 22 38 22 11", you can enter set INFINALITY_FT_FILTER_PARAMS="11 22 38 22 11" in a cmd window that is opened in the location of Firefox 10.0.12, then you can launch Firefox from that cmd window it see the affect of the setting. Alternatively you can launch the script with ash or ksh to set all the settings in the script. I plan on converting this to a cmd file when I have time (or perhaps a volunteer?).
-Anyways that is why this is labeled a beta, and a quick release as well :)
-Building:
-I just applied the patches to http://hobbes.nmsu.edu/download/pub/os2/dev/util/mzfntcfgft_20130104.zip in the freetype directory with -p1 then did make clean && make. See the documentation in freetype-infinality-2.4.11-20130104_04-x86_64.tar.gz and at http://www.infinality.net/blog/infinality-freetype-patches/
-Dave Yeo (dave.r.yeo@gmail.com)
-
+This is a build of Freetype 2.4.12 with the infinality patch set from http://www.infinality.net/blog/infinality-freetype-patches/ compiled to be used by the Mozilla applications and also qpdfview
+Also includes infinality-settings.cmd for setting the various environment variables to change how freetype displays fonts. This cmd file is courtesy of Lewis Rosenthal. See infinality-settings.txt.
+Warning, running this cmd file can cause Firefox hangs on exit, crashes on exit and also cure Firefox hangs, your mileage will vary and it never hurts to backup your profile before experimenting.
+Also included in this release are 2 alternative builds of fntcfg2.dll. The only changes were to the default fonts.
+The fntcfg2.dll.windows uses Arial for san serif and Courier New for monospaced. Probably most people will have these installed or can be found in http://hobbes.nmsu.edu/download/pub/multimedia/fonts/mswbfnts.zip. (watch word wrap)
+The fntcfg2.dll.linux uses Liberation Serif for serif, DejaVu Sans for sans serif and Liberation Mono for monospace.
+The fonts are available as http://hobbes.nmsu.edu/download/pub/multimedia/fonts/truetype/DejaVu-fonts233.wpi and http://hobbes.nmsu.edu/download/pub/multimedia/fonts/truetype/liberation_107.wpi (watch word wrap).
+
+Install by backing up the original DLLs then with Firefox etc closed, copy over freetyp2.dll and whichever fntcfg2.dll you decide to use while renaming the fntcfg2.dll by removing the suffix.
+These are built from the sources at https://bitbucket.org/dryeo/mzfntcfgft specifically changeset:   138:96a6aa431934e24f57f68f71d569d2cd22da5a1b with the included patches applied.
+
+Dave Yeo
+dave.r.yeo@gmail.com
+The mozilla newsgroup is perhaps the best place to discuss this package.

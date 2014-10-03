@@ -1,0 +1,27 @@
+# HG changeset patch
+# Parent 73d2dc0bd6144e6df68d3dd501becc3ac3bafb38
+# User Dave Yeo <daveryeo@telus.net>
+diff --git a/fontconfig/src/fcint.h b/fontconfig/src/fcint.h
+--- a/fontconfig/src/fcint.h
++++ b/fontconfig/src/fcint.h
+@@ -84,18 +84,18 @@
+ #endif
+ 
+ // #define LOOKUP_SFNT_NAME_DEBUG
+ // #define FONTCONFIG_DEBUG_PRINTF
+ // #define MATCH_DEBUG
+ 
+ #define DEFAULT_SERIF_FONT          "Times New Roman"
+ #define DEFAULT_SERIF_FONTJA        "Times New Roman WT J"
+-#define DEFAULT_SANSSERIF_FONT      "Helvetica"
+-#define DEFAULT_MONOSPACED_FONT     "Courier"
++#define DEFAULT_SANSSERIF_FONT      "Arial"
++#define DEFAULT_MONOSPACED_FONT     "Courier New"
+ #define DEFAULT_SYMBOL_FONT         "Symbol Set"
+ #define DEFAULT_DINGBATS_FONT       "DejaVu Sans"
+ 
+ /* structure for the font cache in OS2.INI  */
+ typedef struct FontDescriptionCache_s
+ {
+   char achFileName[CCHMAXPATH];
+   struct stat FileStatus;
